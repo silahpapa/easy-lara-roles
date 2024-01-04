@@ -1,0 +1,21 @@
+{
+    "name": "silah/lara-roles",
+    "description": "laravel roles and permissions",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Silah\\LaraRoles\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "silah",
+            "email": "silakosy@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "prefer-stable": true
+}
