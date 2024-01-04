@@ -15,12 +15,6 @@
             "email": "silakosy@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/silahpapa/lara-roles"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0"
