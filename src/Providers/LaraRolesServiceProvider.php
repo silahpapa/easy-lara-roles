@@ -13,10 +13,9 @@ class LaraRolesServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Silah\LaraRoles\App\Commands\LaraRolesSetupCommand::class,
                 \Silah\LaraRoles\App\Commands\MakeModelAndMigration::class,
                 \Silah\LaraRoles\App\Commands\UpdatePermissions::class
-                ]);
+            ]);
         }
     }
     public function boot()
@@ -30,7 +29,7 @@ class LaraRolesServiceProvider extends ServiceProvider
             __DIR__.'/../routes/api' => base_path('routes/api'),
         ], 'routes');
         $this->publishes([
-            __DIR__.'/../models/Core' => app_path('Core'),
+            __DIR__.'/../models/Core' => app_path('Models/Core'),
         ], 'models');
     }
 }
