@@ -10,7 +10,8 @@ class LaraRolesServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->app->runningInConsole()) {
-            $this->commands([\Silah\LaraRoles\App\Commands\Initialize::class,]);
+            $this->commands([\Silah\LaraRoles\App\Commands\LaraRolesSetupCommand::class,]);
+
         }
     }
     public function boot()
@@ -23,5 +24,8 @@ class LaraRolesServiceProvider extends ServiceProvider
         ], 'routes');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->publishes([
+            __DIR__.'/../models/Core' => app_path('Core'),
+        ], 'models');
     }
 }

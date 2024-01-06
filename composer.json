@@ -16,6 +16,27 @@
             "email": "silakosy@gmail.com"
         }
     ],
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --tag=models",
+            "php artisan vendor:publish --tag=middleware",
+            "php artisan vendor:publish --tag=routes",
+            "php artisan lara-roles:setup"
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --tag=models",
+            "php artisan vendor:publish --tag=middleware",
+            "php artisan vendor:publish --tag=routes",
+            "php artisan lara-roles:setup"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Silah\\LaraRoles\\Providers\\LaraRolesServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
