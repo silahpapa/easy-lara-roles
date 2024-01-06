@@ -2,7 +2,7 @@
 
 namespace Silah\LaraRoles\App\Http\Controllers\Api\Departments;
 
-use Silah\LaraEaseRoles\App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use App\Models\Core\Department;
 use App\Models\Core\Permissions;
 
