@@ -14,7 +14,8 @@ class LaraRolesServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 \Silah\LaraRoles\App\Commands\MakeModelAndMigration::class,
-                \Silah\LaraRoles\App\Commands\UpdatePermissions::class
+                \Silah\LaraRoles\App\Commands\UpdatePermissions::class,
+                \Silah\LaraRoles\App\Commands\PublishLaraRolesFiles::class,
             ]);
         }
     }
