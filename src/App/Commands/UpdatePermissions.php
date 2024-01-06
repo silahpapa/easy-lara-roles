@@ -2,8 +2,8 @@
 
 namespace Silah\LaraRoles\App\Commands;
 
-use App\Models\Core\Department;
-use App\Models\Core\Permissions;
+use Silah\LaraRoles\Models\Core\Department;
+use Silah\LaraRoles\Models\Core\Permissions;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Route;
 
