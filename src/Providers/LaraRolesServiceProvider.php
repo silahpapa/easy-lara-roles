@@ -27,11 +27,10 @@ class LaraRolesServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
         $this->publishes([
-            __DIR__.'/../Models/Core' => app_path('Models/Core'),
-        ]);
-        $this->publishes([
             __DIR__.'/../routes/api' => base_path('routes/api'),
-        ]);
-
+        ], 'routes');
+        $this->publishes([
+            __DIR__.'/../models/Core' => app_path('Core'),
+        ], 'models');
     }
 }
