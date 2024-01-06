@@ -14,16 +14,13 @@ use Illuminate\Support\Facades\File;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+ Route::prefix('api')->group(function () {
+    Route::controller(\Silah\LaraRoles\App\Http\Controllers\Api\Auth\AuthControllers::class)->group(function(){
+        Route::post('auth/register', 'register');
+        Route::post('auth/login', 'login');
+    });
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-Route::controller(\Silah\LaraRoles\App\Http\Controllers\Api\Auth\AuthControllers::class)->group(function(){
-    Route::post('auth/register', 'register');
-    Route::post('auth/login', 'login');
-});
-
-Route::group(['middleware' => ['auth:sanctum','check.roles.permission']], function () {
+    Route::group(['middleware' => ['auth:sanctum','check.roles.permission']], function () {
     $routesPath = base_path('routes/api');
     if (file_exists($routesPath)) {
         $routeFiles = File::allFiles($routesPath);
@@ -48,3 +45,4 @@ Route::group(['middleware' => ['auth:sanctum','check.roles.permission']], functi
         }
     }
 });
+ });

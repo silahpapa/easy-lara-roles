@@ -22,7 +22,7 @@ class CheckRolesPermission
                 return $next($request);
             }
             if (in_array($request->user()->role->name, $roles)) {
-                $check_role_perm = new  \App\Repositories\CheckRolesPermission($request->route());
+                $check_role_perm = new  \Silah\LaraRoles\App\Repositories\CheckRolesPermission($request->route());
                 if ($check_role_perm->checkPermission() || $request->user()->role->name !== 'admin') {
                     return $next($request);
                 }
