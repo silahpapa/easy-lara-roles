@@ -2,7 +2,7 @@
 
 namespace Silah\LaraRoles\App\Repositories;
 
-use App\Models\Core\Department;
+use Silah\LaraRoles\Models\Core\Department;
 use Illuminate\Support\Facades\Route;
 
 class CheckRolesPermission

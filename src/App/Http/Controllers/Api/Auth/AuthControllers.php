@@ -3,7 +3,7 @@
 namespace Silah\LaraRoles\App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Core\User;
+use Silah\LaraRoles\Models\Core\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;

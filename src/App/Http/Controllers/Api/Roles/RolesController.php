@@ -3,7 +3,7 @@
 namespace Silah\LaraRoles\App\Http\Controllers\Api\Roles;
 
 use App\Http\Controllers\Controller;
-use App\Models\Core\Role;
+use Silah\LaraRoles\Models\Core\Role;
 use Illuminate\Http\Request;
 
 class RolesController extends Controller

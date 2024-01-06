@@ -3,8 +3,8 @@
 namespace Silah\LaraRoles\App\Http\Controllers\Api\Departments;
 
 use App\Http\Controllers\Controller;
-use App\Models\Core\Department;
-use App\Models\Core\Permissions;
+use Silah\LaraRoles\Models\Core\Department;
+use Silah\LaraRoles\Models\Core\Permissions;
 
 class DepartmentsController extends Controller
 {
