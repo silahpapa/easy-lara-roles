@@ -2,7 +2,7 @@
     "name": "silah/easy-lara-roles",
     "description": "laravel roles and permissions",
     "type": "library",
-    "version": "v1.0.0",
+    "version": "1.0.1.0",
     "license": "MIT",
     "autoload": {
         "psr-4": {
