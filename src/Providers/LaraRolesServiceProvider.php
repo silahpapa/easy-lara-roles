@@ -25,7 +25,7 @@ class LaraRolesServiceProvider extends ServiceProvider
         $router->aliasMiddleware('checkRolesPermission', \Silah\LaraRoles\App\Http\Middleware\CheckRolesPermission::class);
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->loadMigrationsFrom(__DIR__.'/../migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->publishes([
             __DIR__.'/../routes/api' => base_path('routes/api'),
         ], 'routes');

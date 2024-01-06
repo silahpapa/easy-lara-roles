@@ -3,6 +3,7 @@
 namespace Silah\LaraRoles\App\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 class PublishLaraRolesFiles extends Command
@@ -28,5 +29,14 @@ class PublishLaraRolesFiles extends Command
             }
         }
         $this->info('LaraRoles files published successfully.');
+        $this->info('Seeding data...');
+        DB::table('roles')->insert([
+            ['name' => 'admin'],
+            ['name' => 'user']
+        ]);
+        DB::table('departments')->insert([
+            ['name' => 'super_admin']
+        ]);
+
     }
 }
