@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Core;
+namespace Silah\LaraRoles\App\Models\Core;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;

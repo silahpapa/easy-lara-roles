@@ -5,6 +5,7 @@ namespace Silah\LaraRoles\App\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 
 class PublishLaraRolesFiles extends Command
 {
@@ -17,7 +18,6 @@ class PublishLaraRolesFiles extends Command
         $this->info('Publishing LaraRoles files...');
         $sourcePaths = [
             __DIR__.'/../../routes/api' => base_path('routes/api'),
-            __DIR__.'/../../models/Core' => app_path('Models/Core'),
         ];
 
         foreach ($sourcePaths as $sourcePath => $destinationPath) {
@@ -30,13 +30,24 @@ class PublishLaraRolesFiles extends Command
         }
         $this->info('LaraRoles files published successfully.');
         $this->info('Seeding data...');
-        DB::table('roles')->insert([
-            ['name' => 'admin'],
-            ['name' => 'user']
-        ]);
-        DB::table('departments')->insert([
-            ['name' => 'super_admin']
-        ]);
+        $table = DB::table('roles')->get();
+        if($table->isEmpty()){
+            DB::table('roles')->insert([
+                ['name' => 'admin'],
+                ['name' => 'user']
+            ]);
+            DB::table('departments')->insert([
+                ['name' => 'super_admin']
+            ]);
+            DB::table('users')->insert([
+                'name' => 'super_admin',
+                'email' => 'admin@mail.com',
+                'password' => Hash::make('123456'),
+                'role_id' => 1,
+                'department_id' => 1
+            ]);
+        }
+        $this->info('Data seeded successfully.');
 
     }
 }
