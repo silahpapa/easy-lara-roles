@@ -13,13 +13,16 @@ class LaraRolesSetupCommand extends Command
 
     public function handle()
     {
-        // Copy files to commands folder
-        File::copyDirectory(__DIR__.'/', app_path('Console/Commands'));
+        $this->warn('Initializing lara-roles');
+        $app_dir = app_path();
+        if(!file_exists($app_dir.'/Models/Core/Department.php')){
+            $command2 = 'cp -r '.__DIR__.'/../../templates/Models/Core'.$app_dir.'/Models/';
+            exec($command2);
+            $this->info("Copied default models");
+        }
+        if(!file_exists($app_dir."routes/api/departments/departments.php")){
 
-        // Copy files to Http API Controllers folder
-        File::copyDirectory(__DIR__.'/../Http/Controllers/Api', app_path('Http/Controllers/Api'));
-
-        // Copy files to app folder
-        $this->info('LaraRoles package setup completed.');
+        }
+        return Command::SUCCESS;
     }
 }
