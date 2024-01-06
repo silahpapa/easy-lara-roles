@@ -1,14 +1,13 @@
 <?php
 
-namespace Silah\LaraRoles\Models\Core;
+namespace App\Models\Core;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Silah\LaraRoles\Models\Core\Department;
-use Silah\LaraRoles\Models\Core\Role;
+use App\Models\Core\Department;
+use App\Models\Core\Role;
 
 class User extends Authenticatable
 {

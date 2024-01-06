@@ -3,7 +3,7 @@
 namespace Silah\LaraRoles\App\Http\Controllers\Api\Categories;
 
 use  Silah\LaraEaseRoles\App\Http\Controllers\Controller;
-use Silah\LaraEaseRoles\App\Models\Category;
+use App\Models\Category;
 
 class CategoriesController extends Controller
 {

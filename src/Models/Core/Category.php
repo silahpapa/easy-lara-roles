@@ -1,6 +1,6 @@
 <?php
 
-namespace Silah\LaraRoles\Models\Core;
+namespace App\Models\Core;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

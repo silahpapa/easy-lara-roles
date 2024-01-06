@@ -3,8 +3,8 @@
 namespace Silah\LaraRoles\App\Commands;
 
 use Illuminate\Console\Command;
-use Artisan;
-use File;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class MakeModelAndMigration extends Command
@@ -14,7 +14,7 @@ class MakeModelAndMigration extends Command
      *
      * @var string
      */
-    protected $signature = 'app:make-model-and-migration {model_name}';
+    protected $signature = 'lara-roles:make-model-and-migration {model_name}';
 
     /**
      * The name and signature of the console command.
