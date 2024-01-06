@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\File;
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-Route::controller(\App\Http\Controllers\Api\Auth\AuthControllers::class)->group(function(){
+Route::controller(\Silah\LaraRoles\App\Http\Controllers\Api\Auth\AuthControllers::class)->group(function(){
     Route::post('auth/register', 'register');
     Route::post('auth/login', 'login');
 });
