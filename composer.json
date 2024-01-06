@@ -18,15 +18,13 @@
     ],
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --tag=models",
-            "php artisan vendor:publish --tag=middleware",
-            "php artisan vendor:publish --tag=routes",
+            "composer dump-autoload",
+            "php artisan vendor:publish --tag --all",
             "php artisan lara-roles:setup"
         ],
         "post-update-cmd": [
-            "php artisan vendor:publish --tag=models",
-            "php artisan vendor:publish --tag=middleware",
-            "php artisan vendor:publish --tag=routes",
+            "composer dump-autoload",
+            "php artisan vendor:publish --tag --all",
             "php artisan lara-roles:setup"
         ]
     },

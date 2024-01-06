@@ -20,9 +20,6 @@ class LaraRolesSetupCommand extends Command
             exec($command2);
             $this->info("Copied default models");
         }
-        if(!file_exists($app_dir."routes/api/departments/departments.php")){
-
-        }
         return Command::SUCCESS;
     }
 }
