@@ -30,7 +30,7 @@ class LaraRolesServiceProvider extends ServiceProvider
             __DIR__.'/../Models/Core' => app_path('Models/Core'),
         ]);
         $this->publishes([
-            __DIR__.'/../routes/api' => routes_path('api'),
+            __DIR__.'/../routes/api' => base_path('routes/api'),
         ]);
 
     }
